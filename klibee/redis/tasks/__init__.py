@@ -11,14 +11,15 @@ import json
 
 # function
 # =======================================
-def make_task(self, payload):
+def make_task(self, payload, id_task_type = None):
 
     # data
     id_task = str(uuid.uuid4())
 
     task = {
-        "id_task": id_task,
-        "payload": payload
+         "id_task": id_task,
+    "id_task_type": id_task_type,
+         "payload": payload
     }
 
     # bye
