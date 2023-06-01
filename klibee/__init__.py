@@ -1,18 +1,18 @@
 # library
 # =======================================
 from klibee.environment import Environment
-from klibee.redis       import Redis
 from klibee.exceptions  import Exceptions
 from klibee.logger      import Logger
+from klibee.redis       import Redis
 
 
 # class
 # =======================================
-class Klibee:
+class klibee:
 
 
-    Environment = Environment()
-    Redis       = Redis()
-    Exceptions  = Exceptions()
-    Logger      = Logger()
+    environment = Environment()
+    exceptions  = Exceptions()
+    logger      = Logger()
+    redis       = Redis()
 
