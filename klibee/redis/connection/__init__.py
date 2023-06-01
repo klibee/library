@@ -17,6 +17,9 @@ def connection(self, host = None, port = None, password = None):
     if (self.client is not None):
         return self.client
 
+    # reader .env
+    environment = Environment()
+
     # override
     if (host is None):
         host = environment.REDIS_HOST
@@ -27,20 +30,22 @@ def connection(self, host = None, port = None, password = None):
     if (password is None):
         password = environment.REDIS_PASS
 
-    # reader .env
-    environment = Environment()
+    # check
+    if (host is None):
+        raise Exceptions.NoVariableInEnvFileException("REDIS_HOST")
+
+    if (port is None):
+        port = 6379
 
     # go
     client = None
 
     try:
         # client
-        client = redis.Redis(host=host, port=port, password=password)
+        client = redis.Redis(host=host, port=port, password=password, socket_timeout=3)
 
         # test
-        client.set("foo", "bar")
-        client.delete("foo")
-
+        client.ping()
     except:
         raise Exceptions.CannotConnectRedisException(host)
 
