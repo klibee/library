@@ -36,4 +36,4 @@ class Keys:
     # function
     # ================================================
     def metadata_for_task(self, uuid):
-        return "{}.myproject.tasks.metadata:{}".format(self.prefix, uuid)
+        return "{}.tasks.metadata:{}".format(self.prefix, uuid)

@@ -1,7 +1,9 @@
 # this libary
 # =======================================
 from klibee.redis.connection import connection
-
+from klibee.redis.keys       import Keys
+from klibee.environment      import Environment
+from klibee.exceptions       import Exceptions
 
 # third-party packages
 # =======================================
@@ -36,15 +38,21 @@ def enqueue_tasks(self, tasks, queue = None):
     # pipeline
     pipeline = redis.pipeline()
 
-    # queue name
-    queue = Helpers.Environment.REDIS_QUEUE
+    # override
+    if (queue is None):
+        environment = Environment()
+        queue       = environment.REDIS_QUEUE
+
+    # check
+    if (queue is None):
+        raise Exceptions.NoVariableInEnvFileException("REDIS_QUEUE")
 
     # go
     for task in tasks:
 
         # cast to string
         data     = json.dumps(task)
-        cacheKey = Helpers.Redis.Keys.metadata_for_task(task["id_task"])
+        cacheKey = Keys().metadata_for_task(task["id_task"])
 
         # bulk mode
         pipeline.set(cacheKey, data)
