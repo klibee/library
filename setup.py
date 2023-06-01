@@ -14,7 +14,10 @@ setup(
                 'klibee/exceptions',
                 'klibee/exceptions/common',
                 'klibee/exceptions/files',
+                'klibee/exceptions/env',
                 'klibee/exceptions/redis',
+                'klibee/files',
+                'klibee/files/common',
                 'klibee/logger',
                 'klibee/logger/constants',
                 'klibee/logger/error',
@@ -29,6 +32,7 @@ setup(
     install_requires=[
                       'mysql-connector-python',
                       'python-dotenv',
+                      'pandas',
                       'redis',
                       ],
 

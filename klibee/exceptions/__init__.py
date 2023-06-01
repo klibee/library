@@ -8,7 +8,11 @@ class Exceptions:
 
     # files
     from klibee.exceptions.files.cannot_download_file     import CannotDownloadFileException
+    from klibee.exceptions.files.file_does_not_exists     import FileDoestNotExistsException
 
     # redis
     from klibee.exceptions.redis.cannot_connect_to_redis  import CannotConnectRedisException
     from klibee.exceptions.redis.no_metadata_in_redis     import NoMetadataInRedisException
+
+    # .env
+    from klibee.exceptions.env.no_variable                import NoVariableInEnvFileException

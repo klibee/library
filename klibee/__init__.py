@@ -2,6 +2,7 @@
 # =======================================
 from klibee.environment import Environment
 from klibee.exceptions  import Exceptions
+from klibee.files       import Files
 from klibee.logger      import Logger
 from klibee.redis       import Redis
 
@@ -13,6 +14,7 @@ class klibee:
 
     environment = Environment()
     exceptions  = Exceptions()
+    files       = Files()
     logger      = Logger()
     redis       = Redis()
 
