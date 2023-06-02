@@ -32,7 +32,9 @@ setup(
                 'klibee/redis/connection',
                 'klibee/redis/constructor',
                 'klibee/redis/keys',
-                'klibee/redis/tasks',
+                'klibee/tasks',
+                'klibee/tasks/read',
+                'klibee/tasks/write',
             ], 
     include_package_data=True,
     install_requires=[

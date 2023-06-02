@@ -6,6 +6,7 @@ from klibee.files       import Files
 from klibee.logger      import Logger
 from klibee.random      import Random
 from klibee.redis       import Redis
+from klibee.tasks       import Tasks
 
 
 # class
@@ -18,5 +19,5 @@ class klibee:
     files       = Files()
     logger      = Logger()
     redis       = Redis()
-    random      = Random()
+    tasks       = Tasks()
 
