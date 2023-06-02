@@ -64,3 +64,44 @@ def enqueue_tasks(self, tasks, queue = None):
     # send
     pipeline.execute()
 
+
+# function
+# =======================================
+def get_task(self, queue = None):
+
+    # connection
+    redis = connection(self)
+
+    # override
+    if (queue is None):
+        environment = Environment()
+        queue       = environment.REDIS_QUEUE
+
+    # check
+    if (queue is None):
+        raise Exceptions.NoVariableInEnvFileException("REDIS_QUEUE")
+
+    # get next
+    result = redis.lpop(queue)
+
+    if (result is None):
+        return None
+
+    # cast
+    id_task = result.decode()
+
+    # cache
+    cacheKey = Keys().metadata_for_task(id_task)
+    data     = redis.get(cacheKey)
+
+    # check
+    if (data is None):
+        raise Exceptions.NoMetadataInRedisException(cacheKey)
+
+    # cast to dict
+    data = json.loads(data)
+
+    # bye
+    return data
+
+
