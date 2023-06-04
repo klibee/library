@@ -13,6 +13,9 @@ class Redis:
     # load
     from klibee.redis.connection  import connection
     from klibee.redis.channel     import channel
+    from klibee.redis.read        import get
+    from klibee.redis.read        import has
+    from klibee.redis.write       import set
 
     # make
     keys = Keys()

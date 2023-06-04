@@ -3,6 +3,7 @@
 from klibee.environment import Environment
 from klibee.exceptions  import Exceptions
 from klibee.files       import Files
+from klibee.hasher      import Hasher
 from klibee.logger      import Logger
 from klibee.random      import Random
 from klibee.redis       import Redis
@@ -17,6 +18,7 @@ class klibee:
     environment = Environment()
     exceptions  = Exceptions()
     files       = Files()
+    hasher      = Hasher()
     logger      = Logger()
     redis       = Redis()
     tasks       = Tasks()
