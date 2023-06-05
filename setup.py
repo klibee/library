@@ -18,6 +18,7 @@ setup(
                 'klibee/exceptions/redis',
                 'klibee/files',
                 'klibee/files/common',
+                'klibee/files/write',
                 'klibee/hasher',
                 'klibee/logger',
                 'klibee/logger/constants',

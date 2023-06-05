@@ -15,7 +15,9 @@ def format_message(args, logcolor = None, logtype = None, entryLine = False):
     # remove the first items in args because it is the logger address 
     # (ex. <lib.helpers.logger.Logger object at 0x7f5bc383af40>)
     args = list(args)
-    args.pop(0)
+
+    if (not isinstance(args[0], str)):
+        args.pop(0)
 
     # the message
     message = " ".join(str(x) for x in args)
