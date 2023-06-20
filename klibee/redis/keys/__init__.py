@@ -1,7 +1,7 @@
 # this library
 # ================================================
 from klibee.environment import Environment
-from klibee.exceptions  import Exceptions
+from klibee.logger      import Logger
 
 
 
@@ -26,7 +26,8 @@ class Keys:
 
         # check
         if (prefix is None):
-            raise Exceptions.NoVariableInEnvFileException("REDIS_PREFIX")
+            Logger.info("REDIS_PREFIX is not defined in .env")
+            prefix = "unset"
 
         # bye
         return prefix

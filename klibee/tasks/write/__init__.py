@@ -29,7 +29,7 @@ def make(self, payload, id_task_type = None):
 
 # function
 # =======================================
-def enqueue(self, data, queue = None):
+def enqueue(self, data, queue = None, expire = 86400):
 
     # we can enqueue in bulk mode (a list of objects)
     # or a single object
@@ -64,7 +64,7 @@ def enqueue(self, data, queue = None):
 
         # bulk mode
         pipeline.set(cacheKey, data)
-        pipeline.expire(cacheKey, 86400) # seconds in a day
+        pipeline.expire(cacheKey, expire) # seconds in a day
 
         # bulk mode
         pipeline.lpush(queue, task["id_task"])
