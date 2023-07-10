@@ -16,3 +16,6 @@ class Exceptions:
 
     # .env
     from klibee.exceptions.env.no_variable                import NoVariableInEnvFileException
+
+    # telegram
+    from klibee.exceptions.telegram.cannot_connect_to_telegram  import CannotConnectTelegramException

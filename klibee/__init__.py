@@ -1,5 +1,6 @@
 # library
 # =======================================
+from klibee.dates       import Dates
 from klibee.environment import Environment
 from klibee.exceptions  import Exceptions
 from klibee.files       import Files
@@ -14,7 +15,7 @@ from klibee.tasks       import Tasks
 # =======================================
 class klibee:
 
-
+    dates       = Dates()
     environment = Environment()
     exceptions  = Exceptions()
     files       = Files()
