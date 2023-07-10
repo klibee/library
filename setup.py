@@ -47,6 +47,8 @@ setup(
                 'klibee/telegram/constructor',
                 'klibee/telegram/conversations',
                 'klibee/telegram/messages',
+                'klibee/unique',
+                'klibee/unique/id',
             ], 
     include_package_data=True,
     install_requires=[

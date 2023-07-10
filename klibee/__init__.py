@@ -9,18 +9,20 @@ from klibee.logger      import Logger
 from klibee.random      import Random
 from klibee.redis       import Redis
 from klibee.tasks       import Tasks
+from klibee.unique      import Unique
 
 
 # class
 # =======================================
 class klibee:
 
-    dates       = Dates()
-    environment = Environment()
-    exceptions  = Exceptions()
-    files       = Files()
-    hasher      = Hasher()
-    logger      = Logger()
-    redis       = Redis()
-    tasks       = Tasks()
+    dates         = Dates()
+    environment   = Environment()
+    exceptions    = Exceptions()
+    files         = Files()
+    hasher        = Hasher()
+    logger        = Logger()
+    redis         = Redis()
+    tasks         = Tasks()
+    unique        = Unique()
 
